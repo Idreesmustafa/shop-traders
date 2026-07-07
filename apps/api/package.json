@@ -1,0 +1,10 @@
+{
+  "name": "@shop/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo '[@shop/api] not scaffolded yet — see BUILD-PLAN.md Phase 0 task 2'",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  }
+}
