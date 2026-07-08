@@ -8,9 +8,13 @@
     "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "sync-indexes": "tsx src/scripts/sync-indexes.ts",
+    "seed": "tsx src/scripts/seed.ts"
   },
   "dependencies": {
+    "@shop/shared": "workspace:*",
+    "argon2": "^0.41.1",
     "cors": "^2.8.5",
     "express": "^5.0.1",
     "helmet": "^8.0.0",
@@ -23,6 +27,7 @@
     "@types/express": "^5.0.0",
     "@types/express-serve-static-core": "^5.0.0",
     "@types/supertest": "^6.0.2",
+    "mongodb-memory-server": "^10.1.4",
     "supertest": "^7.0.0",
     "tsx": "^4.19.2",
     "vitest": "^2.1.8"

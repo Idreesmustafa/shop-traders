@@ -9,6 +9,7 @@ const testConfig: Config = {
   MONGODB_URI: 'mongodb://placeholder',
   CORS_ORIGINS: '',
   LOG_LEVEL: 'fatal',
+  SYNC_INDEXES: false,
   corsOrigins: [],
 };
 
