@@ -1,3 +1,4 @@
+import cookieParser from 'cookie-parser';
 import express, { type Express } from 'express';
 import type { Config } from './lib/config.js';
 import { createLogger } from './lib/logger.js';
@@ -5,6 +6,7 @@ import { errorHandler } from './middleware/errorHandler.js';
 import { notFoundHandler } from './middleware/notFound.js';
 import { requestContext } from './middleware/requestContext.js';
 import { securityMiddleware } from './middleware/security.js';
+import { createAuthRouter } from './modules/auth/auth.routes.js';
 import { healthRouter } from './modules/health/health.routes.js';
 
 export const createApp = (config: Config): Express => {
@@ -16,8 +18,11 @@ export const createApp = (config: Config): Express => {
   for (const mw of securityMiddleware(config.corsOrigins)) {
     app.use(mw);
   }
+  app.use(cookieParser());
 
   app.use(healthRouter);
+  app.use('/api/v1/auth', createAuthRouter('shop', config));
+  app.use('/api/admin/v1/auth', createAuthRouter('admin', config));
 
   app.use(notFoundHandler);
   app.use(errorHandler);

@@ -1,5 +1,6 @@
 import type { Model } from 'mongoose';
 import { AuditLogModel } from '../modules/audit/auditLogs.model.js';
+import { RefreshTokenModel } from '../modules/auth/refreshTokens.model.js';
 import { PlanModel } from '../modules/plans/plans.model.js';
 import { PlatformUserModel } from '../modules/platform/platformUsers.model.js';
 import { ShopModel } from '../modules/shops/shops.model.js';
@@ -13,4 +14,5 @@ export const ALL_MODELS: readonly Model<unknown>[] = [
   PlanModel as Model<unknown>,
   SubscriptionModel as Model<unknown>,
   AuditLogModel as Model<unknown>,
+  RefreshTokenModel as Model<unknown>,
 ];

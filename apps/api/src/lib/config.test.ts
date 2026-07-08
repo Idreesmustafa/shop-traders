@@ -9,6 +9,8 @@ describe('loadConfig', () => {
       MONGODB_URI: 'mongodb://db:27017/app',
       CORS_ORIGINS: 'https://a.example, https://b.example',
       LOG_LEVEL: 'warn',
+      JWT_SECRET: 'a'.repeat(32),
+      COOKIE_SECRET: 'b'.repeat(32),
     });
     expect(config.NODE_ENV).toBe('production');
     expect(config.PORT).toBe(4000);
@@ -18,7 +20,7 @@ describe('loadConfig', () => {
   });
 
   it('applies defaults for optional values', () => {
-    const config = loadConfig({ MONGODB_URI: 'mongodb://localhost/test' });
+    const config = loadConfig({ MONGODB_URI: 'mongodb://localhost/test', JWT_SECRET: 'a'.repeat(32), COOKIE_SECRET: 'b'.repeat(32) });
     expect(config.NODE_ENV).toBe('development');
     expect(config.PORT).toBe(3000);
     expect(config.LOG_LEVEL).toBe('info');

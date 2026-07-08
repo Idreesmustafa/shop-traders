@@ -10,6 +10,10 @@ const testConfig: Config = {
   CORS_ORIGINS: '',
   LOG_LEVEL: 'fatal',
   SYNC_INDEXES: false,
+  JWT_SECRET: 'a'.repeat(32),
+  COOKIE_SECRET: 'b'.repeat(32),
+  ACCESS_TOKEN_TTL_MINUTES: 15,
+  REFRESH_TOKEN_TTL_DAYS: 30,
   corsOrigins: [],
 };
 
