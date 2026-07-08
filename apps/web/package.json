@@ -1,0 +1,10 @@
+{
+  "name": "@shop/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo '[@shop/web] not scaffolded yet — see BUILD-PLAN.md Phase 0 task 7'",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  }
+}
