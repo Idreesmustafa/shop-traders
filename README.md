@@ -37,4 +37,6 @@ packages/
   shared/   zod schemas, module registry, money/tax/date utilities
 ```
 
-Each `apps/*` package is a placeholder until its skeleton lands in a later Phase 0 task; `packages/shared` is live from day one.
+## Deployment
+
+See `DEPLOYMENT.md` for the Vercel + MongoDB Atlas runbook, environment variables, and first-deploy checklist. Each app carries its own `vercel.json` so a Vercel project just needs to point at its `apps/*` folder.
